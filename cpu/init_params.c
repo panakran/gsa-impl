@@ -1,13 +1,10 @@
 #include "gsa.h"
 
-void init_params( int argc, char **argv, int *n_pop, int *n_dim, double *min, double *max, int *max_i, double *alpha, double *g0, double *epsilon, int *func )
-{
+void init_params( int argc, char **argv, int *n_pop, int *n_dim, double *min, double *max, int *max_i, double *alpha, double *g0, double *epsilon, int *func ){
     char c;
 
-    while( (c = getopt(argc, argv, "a:d:x:X:i:A:G:e:f:h")) != -1 )
-    {
-        switch( c )
-        {
+    while( (c = getopt(argc, argv, "a:d:x:X:i:A:G:e:f:h")) != -1 ){
+        switch( c ){
             case 'a':
                 *n_pop = atoi(optarg);
                 break;
@@ -44,8 +41,7 @@ void init_params( int argc, char **argv, int *n_pop, int *n_dim, double *min, do
         }
     }
 
-    if( argc < 8 )
-    {
+    if( argc < 8 ){
         exit(EXIT_FAILURE);
     }
 }

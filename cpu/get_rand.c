@@ -1,7 +1,6 @@
 #include "gsa.h"
 
-double get_rand( void )
-{
+double get_rand( void ){
     static long int n = 0;
 
     srand( (unsigned)time(NULL) + n );

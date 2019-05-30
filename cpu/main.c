@@ -1,7 +1,6 @@
 #include "gsa.h"
 
-int main( int argc, char **argv )
-{
+int main( int argc, char **argv ){
     int best_idx, d;
     int n_pop=5, n_dim=2, i=0, max_i=100, func=1;
     double min=0.0, max=0.0, alpha=20, g0=100, epsilon=0.1;
@@ -31,8 +30,7 @@ int main( int argc, char **argv )
     init_gsa( n_pop, n_dim, min, max, x_min, x_max, velocity, position );
 
     // Start iterations
-    while( i<max_i )
-    {
+    while( i<max_i ){
         // Update fitness
         get_fitness( n_pop, n_dim, position, fitness );
 
@@ -43,8 +41,7 @@ int main( int argc, char **argv )
         best_idx = get_best_worst( n_pop, fitness, &best, &worst );
 
         // Save best solution
-        if( (i == 0) || (best < best_z) )
-        {
+        if( (i == 0) || (best < best_z) ){
             best_z = best;
             save_solution( n_dim, position, best_idx, best_x );
         }
