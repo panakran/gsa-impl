@@ -3,12 +3,11 @@
 int main( int argc, char **argv )
 {
     int best_idx, d;
-    int n_pop=5, n_dim=2, i=0, max_i=100, func=0;
+    int n_pop=5, n_dim=2, i=0, max_i=100, func=1;
     double min=0.0, max=0.0, alpha=20, g0=100, epsilon=0.1;
     double g, best, worst, best_z;
     double *position, *velocity, *acceleration, *x_min, *x_max, *fitness, *mass, *inertia_mass, *force, *best_x;
     struct timeval tvBegin, tvEnd, tvDiff;
-
     // Initialize
     init_params( argc, argv, &n_pop, &n_dim, &min, &max, &max_i, &alpha, &g0, &epsilon, &func );
 
