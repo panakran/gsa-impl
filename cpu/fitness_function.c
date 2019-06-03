@@ -1,6 +1,6 @@
 #include "gsa.h"
 
-double de_jong( int n_dim, double *x ){
+double fitness_function( int n_dim, double *x ){
     int d;
     double sum=0.0;
 
