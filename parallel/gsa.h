@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <math.h>
 #include <time.h>
+#include "mpi.h"
 
 double (*objective_function)( int n_dim, double *x );
 
