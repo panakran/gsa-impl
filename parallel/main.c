@@ -82,6 +82,7 @@ int main( int argc, char **argv ){
         }
         MPI_Bcast(&best, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
         MPI_Bcast(&worst, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+        MPI_Bcast(&g, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
         // Scatter agents
         MPI_Scatter(fitness, n_pop/size, MPI_DOUBLE, buffer_fitness, n_pop/size, MPI_DOUBLE, 0, MPI_COMM_WORLD);
@@ -112,11 +113,11 @@ int main( int argc, char **argv ){
         // Update agents
         update_agents( n_pop/size, n_dim, g, buffer_force, x_min, x_max, buffer_velocity, buffer_position );
 
-        printf( "\n\nUpdate agents %d of %d\n", rank, size );
-        for(d=0; d<n_pop/size; d++ ){
-            printf( "\nUpdate agents %d update fitness %f::%f::%f::%f",
-            d, buffer_position[d], buffer_inertia_mass[d], buffer_force[d], buffer_velocity[d]);
-        }
+        //printf( "\n\nUpdate agents %d of %d\n", rank, size );
+        // for(d=0; d<n_pop/size; d++ ){
+        //     printf( "\nUpdate agents %d update fitness %f::%f::%f::%f",
+        //     d, buffer_position[d], buffer_inertia_mass[d], buffer_force[d], buffer_velocity[d]);
+        // }
 
          //Gather agents
         MPI_Gather(buffer_position, n_pop/size, MPI_DOUBLE, position, n_pop/size, MPI_DOUBLE, 0, MPI_COMM_WORLD);

@@ -55,10 +55,10 @@ int main( int argc, char **argv ){
         // Update agents
         update_agents( n_pop, n_dim, g, force, x_min, x_max, velocity, position );
 
-        for(d=0; d<n_pop; d++ ){
-            printf( "\nUpdate agents %d update fitness %f::%f::%f::%f",
-            d, position[d], inertia_mass[d], force[d], velocity[d]);
-        }
+        // for(d=0; d<n_pop; d++ ){
+        //     printf( "\nUpdate agents %d update fitness %f::%f::%f::%f",
+        //     d, position[d], inertia_mass[d], force[d], velocity[d]);
+        // }
 
         i++;
     }
